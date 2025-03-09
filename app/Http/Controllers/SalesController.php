@@ -15,7 +15,6 @@ class SalesController extends Controller
     }
 
     public function report(){
-
-        echo "test";
+        return view('sales_report');
     }
 }
