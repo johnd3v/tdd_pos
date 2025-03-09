@@ -27,4 +27,5 @@ Route::view('product','product')->middleware(['auth', 'verified'])->name('produc
 // Route::view('sales','sales')->middleware(['auth', 'verified'])->name('sales');
 
 Route::get('/sales',[SalesController::class,'index'])->middleware(['auth','verified'])->name('sales');
+Route::get('/sales/report',[SalesController::class,'report'])->middleware(['auth','verified'])->name('sales.report');
 

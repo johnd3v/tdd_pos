@@ -15,7 +15,6 @@ class ProductTable extends DataTableComponent
     {
         $this->setPrimaryKey('id'); 
         $this->setColumnSelectStatus(false); 
-        $this->setDebugEnabled();
        
     }
 

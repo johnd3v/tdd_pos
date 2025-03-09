@@ -29,6 +29,12 @@
                 {{ __('Sales') }}
                 </flux:navlist.item>
             </flux:navlist>
+
+            <flux:navlist variant="outline">
+                <flux:navlist.item icon="folder-git-2" :href="route('sales.report')" :current="request()->routeIs('sales.report')" wire::nagivate>
+                {{ __('Sales Report') }}
+                </flux:navlist.item>
+            </flux:navlist>
             <flux:spacer />
 
             <!-- Desktop User Menu -->

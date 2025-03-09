@@ -13,4 +13,9 @@ class SalesController extends Controller
             "products" => $product
         ]);
     }
+
+    public function report(){
+
+        echo "test";
+    }
 }
