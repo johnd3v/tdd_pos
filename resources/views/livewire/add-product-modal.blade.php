@@ -33,11 +33,3 @@
     </flux:modal>
 </div>
 
-<script>
-    Livewire.on('close-modal', () => {
-        const modal = document.querySelector('[name="add-profile"]');
-        if (modal) {
-            modal.removeAttribute('open'); // Close the modal
-        }
-    });
-</script>

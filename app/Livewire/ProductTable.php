@@ -9,11 +9,13 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 class ProductTable extends DataTableComponent
 {
 
+
     protected $model = Product::class;
     public function configure(): void
     {
         $this->setPrimaryKey('id'); 
         $this->setColumnSelectStatus(false); 
+        $this->setDebugEnabled();
        
     }
 
