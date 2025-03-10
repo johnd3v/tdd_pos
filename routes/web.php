@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\SalesController;
-Route::get('/', function () {
-    return redirect()->route('login');
-})->name('home');
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

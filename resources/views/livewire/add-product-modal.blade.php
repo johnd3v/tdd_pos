@@ -1,16 +1,16 @@
 <div>
     <!-- Show Success Message -->
-    @if (session()->has('message'))
+    {{-- @if (session()->has('message'))
         <div class="bg-green-500 text-white p-2 rounded mb-3">
             {{ session('message') }}
         </div>
-    @endif
+    @endif --}}
 
-    <flux:modal.trigger name="add-profile">
+    <flux:modal.trigger name="add-product-modal">
         <flux:button>Add Product</flux:button>
     </flux:modal.trigger>
 
-    <flux:modal name="add-profile" class="md:w-96" wire:ignore.self>
+    <flux:modal name="add-product-modal" class="md:w-96" wire:ignore.self>
         <form wire:submit.prevent="saveProduct" enctype="multipart/form-data">
             <div class="space-y-6">
                 <div>
@@ -31,5 +31,23 @@
             </div>
         </form>
     </flux:modal>
+
+
+
+
+
+    <script>
+        window.addEventListener("load", function () {
+            if (window.Livewire) {
+                window.Livewire.on("closeModal", () => {
+                    Flux.modals().close()
+                });
+            } else {
+                console.error("Livewire is not available.");
+            }
+        });
+    </script>
+    
+    
 </div>
 

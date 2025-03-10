@@ -11,11 +11,19 @@ class ProductTable extends DataTableComponent
 
 
     protected $model = Product::class;
+    protected $listeners = ['refreshDatatable' => 'refreshTable'];
+
     public function configure(): void
     {
         $this->setPrimaryKey('id'); 
         $this->setColumnSelectStatus(false); 
        
+    }
+
+
+    public function refreshTable() : void
+    {
+        $this->resetTable();
     }
 
     public function columns(): array
@@ -33,4 +41,7 @@ class ProductTable extends DataTableComponent
             Column::make('Price', 'price')->sortable()->searchable(),
         ];
     }
+
+   
+
 }

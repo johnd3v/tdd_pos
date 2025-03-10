@@ -4,4 +4,6 @@
 
 <livewire:product-table />
 
+<livewire:toast :title="'piste'" :type="'warning'" :message="'pisteka'"/>
+
 </x-layouts.app>

@@ -20,7 +20,8 @@ class AddProductModal extends Component
         'image' => 'nullable|image|max:2048'
     ];
 
-    public function saveProduct(){
+    public function saveProduct() : void
+    {
         $this->validate();
         
         $imagePath = null;
@@ -37,14 +38,12 @@ class AddProductModal extends Component
             'image' => $imagePath
         ]);
 
-        session()->flash('message', 'Product added successfully!');
+        $this->dispatch('showToast', type: 'success', title: 'Product Added', message: 'The product has been successfully created!');
 
         // Reset the form
         $this->reset(['name', 'type', 'shelf_code', 'renter', 'price']);
-
-        // Dispatch event to close modal
-        // $this->dispatch('close-flux-modal');
-        $this->dispatch('close-modal');
+        $this->dispatch('refreshDatatable');
+        $this->dispatch('closeModal');
 
     }
 
